@@ -1,11 +1,34 @@
+{% extends "movies/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fav Movies</title>
-</head>
-<body>
+  </head>
+  <body>
+    {% block content %}
     <h1>My Fav Movies</h1>
-</body>
+    {% if movies %}
+    <ul>
+      {% for movie in movies %}
+      <li>{{ movie }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Movies Available</p>
+    {% endif %}
+
+    <h1>Fav Tv-Series</h1>
+    {% if tvseries %}
+    <ul>
+      {% for series in tvseries %}
+      <li>{{ series }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Tv-series here!</p>
+    {% endif %} {% endblock content %}
+  </body>
 </html>
