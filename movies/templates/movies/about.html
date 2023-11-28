@@ -1,5 +1,5 @@
 {% extends "movies/base.html" %}
-{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,8 @@
   <body>
     {% block content %}
     <h1>I like all kinds of genres. Can't decide on a fav</h1>
-    <img style="width: 200px; height: 200px;" src="{% static 'movies/me.jpg' %}" alt="">
+    {% load static %}
+    <img style="width: 200px; height: 200px;" src="{% static 'movies/images/me.jpg' %}" alt="Image">
     {% endblock content %}
   </body>
 </html>
